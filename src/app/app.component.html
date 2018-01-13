@@ -1,20 +1,30 @@
-<input id="name" name="name" class="form-control" required minlength="4" forbiddenName="bob" [(ngModel)]="form.name" #name="ngModel" (input)="onClickMe()" (ngModelChange)="modelChanged($event)">
+<div class="form-group" [class.has-error]="name.invalid && (name.dirty || name.touched)">
 
-{{clickMessage}}
-
-<div *ngIf="name.invalid && (name.dirty || name.touched)"
-		 class="alert alert-danger">
-
-	<div *ngIf="name.errors.required">
-		Name is required.
-	</div>
-	<div *ngIf="name.errors.minlength">
-		Name must be at least 4 characters long.
-	</div>
-	<div *ngIf="name.errors.forbiddenName">
-		Name cannot be Bob.
-	</div>
-
+	<label for="name" class="control-label">Name</label>
+	<input
+		id="name"
+		name="name"
+		class="form-control"
+		required minlength="4"
+		forbiddenName="bob"
+		[(ngModel)]="form.name"
+		#name="ngModel"
+		(input)="onClickMe()"
+		(ngModelChange)="modelChanged($event)"
+		>
+    <p class="help-block">
+    	<span *ngIf="name.invalid && (name.dirty || name.touched)">
+    		<span *ngIf="name.errors.required">
+    			Name is required.
+    		</span>
+    		<span *ngIf="name.errors.minlength">
+    			Name must be at least 4 characters long.
+    		</span>
+    		<span *ngIf="name.errors.forbiddenName">
+    			Name cannot be Bob.
+    		</span>
+    	</span>
+    </p>
 </div>
 
 
