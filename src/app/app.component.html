@@ -1,6 +1,6 @@
-<input id="name" name="name" class="form-control"
-			 required minlength="4" forbiddenName="bob"
-			 [(ngModel)]="name" #name="ngModel" >
+<input id="name" name="name" class="form-control" required minlength="4" forbiddenName="bob" [(ngModel)]="form.name" #name="ngModel" (input)="onClickMe()" (ngModelChange)="modelChanged($event)">
+
+{{clickMessage}}
 
 <div *ngIf="name.invalid && (name.dirty || name.touched)"
 		 class="alert alert-danger">
@@ -18,10 +18,10 @@
 </div>
 
 
-<h1>{{title}}</h1>
+<!-- <h1>{{title}}</h1>
 <nav>
 	<a routerLink="/dashboard">Dashboard</a>
 	<a routerLink="/heroes">Heroes</a>
 </nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+<app-messages></app-messages> -->
