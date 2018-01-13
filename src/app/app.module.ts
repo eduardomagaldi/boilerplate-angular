@@ -18,28 +18,28 @@ import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
+	imports: [
+		BrowserModule,
+		FormsModule,
+		AppRoutingModule,
+		HttpClientModule,
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
-  ],
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    HeroSearchComponent
-  ],
-  providers: [ HeroService, MessageService ],
-  bootstrap: [ AppComponent ]
+		// The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+		// and returns simulated server responses.
+		// Remove it when a real server is ready to receive requests.
+		HttpClientInMemoryWebApiModule.forRoot(
+			InMemoryDataService, { dataEncapsulation: false }
+		)
+	],
+	declarations: [
+		AppComponent,
+		DashboardComponent,
+		HeroesComponent,
+		HeroDetailComponent,
+		MessagesComponent,
+		HeroSearchComponent
+	],
+	providers: [ HeroService, MessageService ],
+	bootstrap: [ AppComponent ]
 })
 export class AppModule { }
